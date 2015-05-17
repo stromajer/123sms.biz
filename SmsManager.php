@@ -1,7 +1,7 @@
 <?php
 /**
  * PHP Class for http://123sms.biz SMS GATE API V 1.0
- * Uses CURL with REST verion of API
+ * Uses CURL with REST version of API
  *
  * This is free software. Use it and modify as you like.
  * If you like it, send me tip ;) (BTC) : 1GQNZC7GqLLmradUPmxd6UG2JukDbm7ku
