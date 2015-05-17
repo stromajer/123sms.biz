@@ -8,10 +8,6 @@
  * (c) 2015 Michal Stromajer <stromaler@gospace.sk>
  **/
 
-namespace AppBundle\Util;
-
-
-use Symfony\Component\Config\Definition\Exception\Exception;
 
 class SmsManager
 {
