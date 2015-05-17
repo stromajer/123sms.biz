@@ -16,7 +16,7 @@ Example:
 
 
 
-1. SEND SMS:
+ SEND SMS:
 ```PHP
 $sms = new SmsManager();
 $sms->setSender('Me')
@@ -26,14 +26,14 @@ $sms->setSender('Me')
     ->sendSms();
 ```
     
-2. GET CREDIT INFORMATION:
+ GET CREDIT INFORMATION:
 
 ```PHP
 $sms = new SmsManager();
 $myCredit = $sms->setCredentials('myUsername','password')>getCredit();
 ```
 
-3. VERIFY NUMBER:
+ VERIFY NUMBER:
 
 ```PHP
 $sms = new SmsManager();
