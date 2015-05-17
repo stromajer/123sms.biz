@@ -1,12 +1,12 @@
 # 123sms.biz API PHP CLIENT
-Simple class for work with http://123sms.biz API
+Simple class for work with http://123sms.biz (http://123sms.sk) API
 
 This class fasten work with 123sms.biz SMS gateway.
 
 It can:
--Send one / multiple SMS
--Get remaining credit information
--Verify telephone number
+-- Send one / multiple SMS
+-- Get remaining credit information
+-- Verify telephone number
 
 If you want more functionality from 123sms.biz API, feel free to message me <stromaler@gospace.sk>.
 
