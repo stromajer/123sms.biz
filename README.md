@@ -1,4 +1,4 @@
-# 123sms.biz
+# 123sms.biz API PHP CLIENT
 Simple class for work with http://123sms.biz API
 
 This is simple class which simplifies work with 123sms.biz SMS gateway.
@@ -9,6 +9,7 @@ It can:
 -Verify telephone number and get info
 
 If you want more functionality from 123sms.biz API, feel free to message me <stromaler@gospace.sk>.
+
 I implemented only most used functions what I need.
 
 Example:
