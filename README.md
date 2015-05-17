@@ -1,7 +1,7 @@
 # 123sms.biz API PHP CLIENT
 Simple class for work with http://123sms.biz API
 
-This is simple class which simplifies work with 123sms.biz SMS gateway.
+This class fasten work with 123sms.biz SMS gateway.
 
 It can:
 -Send one / multiple SMS
