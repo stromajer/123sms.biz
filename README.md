@@ -6,7 +6,7 @@ This is simple class which simplifies work with 123sms.biz SMS gateway.
 It can:
 -Send one / multiple SMS
 -Get remaining credit information
--Verify telephone number and get info
+-Verify telephone number
 
 If you want more functionality from 123sms.biz API, feel free to message me <stromaler@gospace.sk>.
 
