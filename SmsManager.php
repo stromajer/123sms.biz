@@ -94,14 +94,33 @@ class SmsManager
 
     /**
      * Adds number where is sms going to be send
-     * @param $number string
+     * @param $number string|array
      * @return $this
      */
     public function addRecipient($number)
     {
+        if (is_array($number)) {
+            $mergedNumbers = array_merge($this->recipients,$number);
+            $this->recipients = array_unique($mergedNumbers);
+
+            return $this;
+        }
+
         if (!in_array($number, $this->recipients)) {
             $this->recipients[] = $number;
         }
+
+        return $this;
+    }
+
+    /**
+     * Clears all added numbers
+     *
+     * @return $this
+     */
+    public function removeRecipients()
+    {
+        $this->recipients = array();
 
         return $this;
     }
@@ -239,15 +258,16 @@ class SmsManager
     }
 
     /**
-     * set sender of sms.
+     * Set sender of sms.
      * methods checks if name is not too long
      *
      * @param mixed $sender
      * @return $this
+     * @throws Exception
      */
     public function setSender($sender)
     {
-        if (strlen($sender) > strlen(self::MAX_SENDER_NAME_LENGTH) ) {
+        if (strlen($sender) <= self::MAX_SENDER_NAME_LENGTH ) {
             $this->sender = $sender;
             return $this;
         }
