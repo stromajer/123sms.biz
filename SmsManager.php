@@ -178,7 +178,7 @@ class SmsManager
     public function getCredit()
     {
         $this->credentialsOk();
-        $this->curlConfig[CURLOPT_URL] = self::SMS_API_URL_VERIFY_NUMBER;
+        $this->curlConfig[CURLOPT_URL] = self::SMS_API_URL_CREDIT;
         $this->curlConfig[CURLOPT_POSTFIELDS]['username'] = $this->getUsername();
         $this->curlConfig[CURLOPT_POSTFIELDS]['password'] = $this->getPassword() ? $this->getPassword() : $this->getApiKey();
         curl_setopt_array($this->curl, $this->curlConfig);
