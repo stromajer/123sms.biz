@@ -55,12 +55,12 @@ class SmsManager
 
     private $curl;
 
-    private $curlConfig = [];
+    private $curlConfig = array();
 
     /**
      * @var array sms recipients
      */
-    private $recipients = [];
+    private $recipients = array();
 
     /**
      * @var string sms message
@@ -221,7 +221,7 @@ class SmsManager
         $this->senderOk();
         $this->hasRecipients();
         $this->hasMessage();
-        $this->curlConfig[CURLOPT_POSTFIELDS] = [];
+        $this->curlConfig[CURLOPT_POSTFIELDS] = array();
         $this->curlConfig[CURLOPT_URL] = self::SMS_API_URL;
         $this->curlConfig[CURLOPT_POSTFIELDS]['username'] = $this->getUsername();
         $this->curlConfig[CURLOPT_POSTFIELDS]['password'] = $this->getPassword() ? $this->getPassword() : $this->getApiKey();
