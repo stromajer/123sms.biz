@@ -30,14 +30,14 @@ $sms->setSender('Me')
 
 ```PHP
 $sms = new SmsManager();
-$myCredit = $sms->setCredentials('myUsername','password')>getCredit();
+$myCredit = $sms->setCredentials('myUsername','password')->getCredit();
 ```
 
  VERIFY NUMBER:
 
 ```PHP
 $sms = new SmsManager();
-$numberInfo = $sms->setCredentials('myUsername','password')>verifyNumber('00421111222');
+$numberInfo = $sms->setCredentials('myUsername','password')->verifyNumber('00421111222');
 ```
 The only dependency is CURL module in PHP.
 
