@@ -8,5 +8,8 @@
             "name": "Michal Stromajer",
             "email": "stromajer.michal@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "classmap": ["src/"]
+    }
 }
