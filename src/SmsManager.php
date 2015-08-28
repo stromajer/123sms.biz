@@ -8,6 +8,7 @@
  * (c) 2015 Michal Stromajer <stromaler@gospace.sk>
  **/
 
+namespace Stromaler\Biz123Sms;
 
 class SmsManager
 {
