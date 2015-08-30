@@ -18,7 +18,7 @@ Example:
 
  SEND SMS:
 ```PHP
-$sms = new SmsManager();
+$sms = new Stromaler\Biz123Sms\SmsManager();
 $sms->setSender('Me')
     ->setCredentials('myUsername','password')
     ->setMessage('Hi, this is test SMS')
@@ -29,14 +29,14 @@ $sms->setSender('Me')
  GET CREDIT INFORMATION:
 
 ```PHP
-$sms = new SmsManager();
+$sms = new Stromaler\Biz123Sms\SmsManager();
 $myCredit = $sms->setCredentials('myUsername','password')->getCredit();
 ```
 
  VERIFY NUMBER:
 
 ```PHP
-$sms = new SmsManager();
+$sms = new Stromaler\Biz123Sms\SmsManager();
 $numberInfo = $sms->setCredentials('myUsername','password')->verifyNumber('00421111222');
 ```
 The only dependency is CURL module in PHP.

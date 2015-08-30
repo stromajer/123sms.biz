@@ -9,7 +9,12 @@
             "email": "stromajer.michal@gmail.com"
         }
     ],
+    "require": {
+        "php": ">= 5.3"
+    },
     "autoload": {
-        "classmap": ["src/"]
+        "psr-4": {
+            "Stromaler\\Biz123Sms\\": "src/"
+        }
     }
 }
