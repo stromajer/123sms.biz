@@ -1,4 +1,4 @@
-<?php
+<?php namespace Stromaler\Biz123Sms;
 /**
  * PHP Class for http://123sms.biz SMS GATE API V 1.0
  * Uses CURL with REST version of API
@@ -6,13 +6,10 @@
  * This is free software. Use it and modify as you like.
  * If you like it, send me tip ;) (BTC) : 1GQNZC7GqLLmradUPmxd6UG2JukDbm7ku
  * (c) 2015 Michal Stromajer <stromaler@gospace.sk>
- **/
-
-namespace Stromaler\Biz123Sms;
+ */
 
 class SmsManager
 {
-
     /**
      * url for posting sms
      */
@@ -30,7 +27,7 @@ class SmsManager
 
     /**
      * max sender name length
-    */
+     */
     const MAX_SENDER_NAME_LENGTH = 11;
 
     /**
@@ -41,17 +38,17 @@ class SmsManager
 
     /**
      * @var string password to 123sms.biz
-    */
+     */
     protected $password;
 
     /**
      * @var string if you dont want use  your password, use API key from 123sms.biz
-    */
+     */
     protected $apiKey;
 
     /**
      * @var bool is credentials set ?
-    */
+     */
     protected $isAuthenticated = false;
 
     private $curl;
@@ -65,18 +62,18 @@ class SmsManager
 
     /**
      * @var string sms message
-    */
+     */
     protected $message;
 
     /**
      * @var string sender who sending sms
-    */
+     */
     protected $sender;
 
     /**
      * for every sent sms will be set array with result received from API
      * @var array
-    */
+     */
     protected $response;
 
     public function __construct()
@@ -95,6 +92,7 @@ class SmsManager
 
     /**
      * Adds number where is sms going to be send
+     *
      * @param $number string|array
      * @return $this
      */
@@ -128,6 +126,7 @@ class SmsManager
 
     /**
      * Set auth credentials. You have two choices: username and password or username and API key
+     *
      * @param null $username
      * @param null $password
      * @param null $apiKey
@@ -152,6 +151,13 @@ class SmsManager
         return $this;
     }
 
+    /**
+     * Checks if any authentication method was provided
+     * e.g api key, or username, password
+     *
+     * @return bool
+     * @throws \Exception
+     */
     private function credentialsOk()
     {
         if ($this->username) {
@@ -163,6 +169,12 @@ class SmsManager
         throw new \Exception('Set username.');
     }
 
+    /**
+     * Checks if any recipient was set
+     *
+     * @throws \Exception if not
+     * @return true if yes
+     */
     private function hasRecipients()
     {
         if (count($this->recipients)) {
@@ -171,6 +183,12 @@ class SmsManager
         throw new \Exception('No recipients was set.');
     }
 
+    /**
+     * Checks if any sender name was set
+     *
+     * @throws \Exception if not
+     * @return true if yes
+     */
     private function senderOk()
     {
          if ($this->getSender()) {
@@ -180,6 +198,12 @@ class SmsManager
         throw new \Exception('No sender was set.');
     }
 
+    /**
+     * Checks if sms message was set
+     *
+     * @throws \Exception if not
+     * @return true if yes
+     */
     private function hasMessage()
     {
         if ($this->getSender()) {
@@ -255,7 +279,6 @@ class SmsManager
         }
 
         return $this->response;
-
     }
 
     /**
@@ -264,7 +287,7 @@ class SmsManager
      *
      * @param mixed $sender
      * @return $this
-     * @throws Exception
+     * @throws \Exception
      */
     public function setSender($sender)
     {
@@ -273,7 +296,7 @@ class SmsManager
             return $this;
         }
 
-        throw new Exception('Sender name exceeds maximum length ( '.self::MAX_SENDER_NAME_LENGTH.' )');
+        throw new \Exception('Sender name exceeds maximum length ( '.self::MAX_SENDER_NAME_LENGTH.' )');
     }
 
     /**
