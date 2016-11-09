@@ -4,7 +4,7 @@
  * Uses CURL with REST version of API
  *
  * This is free software. Use it and modify as you like.
- * If you like it, send me tip ;) (BTC) : 1GQNZC7GqLLmradUPmxd6UG2JukDbm7ku
+ * If you like it, send me tip ;) (BTC) : 1NkHCRUmYCGEKBAJUiKdqUJ3Nj3QNuTzmh
  * (c) 2015 Michal Stromajer <stromaler@gospace.sk>
  */
 
