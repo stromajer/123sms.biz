@@ -97,7 +97,7 @@ class SmsManager
      */
     protected $response;
 
-    private $gateway = GATEWAY_BASIC;
+    private $gateway = SmsManager::GATEWAY_BASIC;
     private $callbackUrl = '';
     private $id = 0;
 
@@ -296,7 +296,7 @@ class SmsManager
         $this->curlConfig[CURLOPT_POSTFIELDS]['password'] = $this->getPassword() ? $this->getPassword() : $this->getApiKey();
         $this->curlConfig[CURLOPT_POSTFIELDS]['message'] = $this->getMessage();
         $this->curlConfig[CURLOPT_POSTFIELDS]['sender'] = $this->getSender();
-        $this->curlConfig[CURLOPT_POSTFIELDS]['gateway'] = 'standard';
+        $this->curlConfig[CURLOPT_POSTFIELDS]['gateway'] = $this->getGateway();
 
 
         if (!empty($this->callbackUrl)) {
@@ -414,19 +414,23 @@ class SmsManager
 
     public function setCallbackUrl($url) {
         $this->callbackUrl = $url;
-        
+
         return $this;
     }
 
     public function setId($id) {
         $this->id = $id;
-        
+
         return $this;
     }
 
     public function setGateway($gateway) {
         $this->gateway = $gateway;
-        
+
         return $this;
+    }
+
+    public function getGateway() {
+        return $this->gateway;
     }
 }
