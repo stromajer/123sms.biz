@@ -414,13 +414,19 @@ class SmsManager
 
     public function setCallbackUrl($url) {
         $this->callbackUrl = $url;
+        
+        return $this;
     }
 
     public function setId($id) {
         $this->id = $id;
+        
+        return $this;
     }
 
     public function setGateway($gateway) {
         $this->gateway = $gateway;
+        
+        return $this;
     }
 }
