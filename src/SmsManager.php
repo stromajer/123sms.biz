@@ -10,6 +10,9 @@
 
 class SmsManager
 {
+    const GATEWAY_BASIC = "basic",
+        GATEWAY_STANDARD = "standard",
+        GATEWAY_PREMIUM = "premium";
 
     //response codes meanings
     const RESPONSE_SMS_ACCEPTED_AND_SHEDULED = 2,
@@ -93,6 +96,10 @@ class SmsManager
      * @var array
      */
     protected $response;
+
+    private $gateway = GATEWAY_BASIC;
+    private $callbackUrl = '';
+    private $id = 0;
 
     public function __construct()
     {
@@ -289,6 +296,13 @@ class SmsManager
         $this->curlConfig[CURLOPT_POSTFIELDS]['password'] = $this->getPassword() ? $this->getPassword() : $this->getApiKey();
         $this->curlConfig[CURLOPT_POSTFIELDS]['message'] = $this->getMessage();
         $this->curlConfig[CURLOPT_POSTFIELDS]['sender'] = $this->getSender();
+        $this->curlConfig[CURLOPT_POSTFIELDS]['gateway'] = 'standard';
+
+
+        if (!empty($this->callbackUrl)) {
+            $this->curlConfig[CURLOPT_POSTFIELDS]['cid'] = $this->id;
+            $this->curlConfig[CURLOPT_POSTFIELDS]['callback'] = $this->callbackUrl;
+        }
 
         foreach ($this->getRecipients() as $recipient) {
             $this->curlConfig[CURLOPT_POSTFIELDS]['recipient'] = $recipient;
@@ -396,5 +410,17 @@ class SmsManager
             self::RESPONSE_SMS_TIME_LIMIT_EXCEEDED,
             self::RESPONSE_SMS_UNKNOWN_ERROR,
         ];
+    }
+
+    public function setCallbackUrl($url) {
+        $this->callbackUrl = $url;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function setGateway($gateway) {
+        $this->gateway = $gateway;
     }
 }
