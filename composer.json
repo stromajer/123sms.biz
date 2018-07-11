@@ -1,5 +1,5 @@
 {
-    "name": "lpasek/123sms.biz",
+    "name": "stromaler/123sms.biz",
     "description": "Simple class for work with http://123sms.biz (http://123sms.sk) API",
     "minimum-stability": "stable",
     "license": "Apache-2.0",
