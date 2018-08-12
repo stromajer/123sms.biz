@@ -23,6 +23,10 @@ $sms->setSender('Me')
     ->setCredentials('myUsername','password')
     ->setMessage('Hi, this is test SMS')
     ->addRecipient('00421111222')
+    /* added not required methods
+    //->setGateway(SmsManager::GATEWAY_PREMIUM);
+    //->setCallbackUrl("https://www.test.com/callback");
+    */
     ->sendSms();
 ```
     
