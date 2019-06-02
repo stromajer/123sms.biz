@@ -4,8 +4,7 @@
  * Uses CURL with REST version of API
  *
  * This is free software. Use it and modify as you like.
- * If you like it, send me tip ;) (BTC) : 1NkHCRUmYCGEKBAJUiKdqUJ3Nj3QNuTzmh
- * (c) 2015 Michal Stromajer <stromaler@gospace.sk>
+ * (c) 2015 - 2137 Michal Stromajer <stromajer.michal@gmail.com>
  */
 
 class SmsManager
