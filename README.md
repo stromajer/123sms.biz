@@ -8,7 +8,7 @@ It can:
 -- Get remaining credit information
 -- Verify telephone number
 
-If you want more functionality from 123sms.biz API, feel free to message me <stromaler@gospace.sk>.
+If you want more functionality from 123sms.biz API, feel free to message me <stromajer.michal@gmail.com>.
 
 I implemented only most used functions what I need.
 
